@@ -1,6 +1,6 @@
 name: CI Pipeline
 
-on: 
+on:
   pull_request:
     branches:
       - main
@@ -9,7 +9,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
-    steps: 
+    steps:
       - name: Check out code
         uses: actions/checkout@v2
 
@@ -28,7 +28,7 @@ jobs:
         run: npm run prettier
 
       - name: Run tests
-        env: 
+        env:
           CI: true
         run: npm run test
 
